@@ -9,6 +9,7 @@ public class Barang implements Serializable{
     private String namaBarang;
     private JenisBarang jenisBarang;
     private Date tanggalKadaluarsa;
+    private Integer hargaBarang;
 
     public Integer getIdBarang() {
         return idBarang;
@@ -40,5 +41,13 @@ public class Barang implements Serializable{
 
     public void setTanggalKadaluarsa(Date tanggalKadaluarsa) {
         this.tanggalKadaluarsa = tanggalKadaluarsa;
+    }
+
+    public Integer getHargaBarang() {
+        return hargaBarang;
+    }
+
+    public void setHargaBarang(Integer hargaBarang) {
+        this.hargaBarang = hargaBarang;
     }
 }
