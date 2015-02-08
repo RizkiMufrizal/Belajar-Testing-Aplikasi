@@ -20,5 +20,6 @@ jika terjadi error seperti ini :
  Files in this Java Virtual Machine`
 
 silahkan download JCE (Java Cryptography Extension) di situsnya oracle lalu lakukan step berikut :
-* ekstrak file tersebut yang berisi file `local_policy.jar` dan `US_export_policy.jar`
+* ekstrak file yang telah di download berdasarkan versi JDK nya 
+* di dalam folder tersebut berisi file `local_policy.jar` dan `US_export_policy.jar`
 * lalu copy ke folder `JAVA_HOME\jre\lib\security\`
