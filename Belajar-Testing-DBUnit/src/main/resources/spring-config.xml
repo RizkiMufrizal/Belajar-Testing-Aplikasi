@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:annotation-config />
+    <context:component-scan base-package="com.rizki.mufrizal.belajar.testing" />
+    
+    <context:property-placeholder location="classpath:jdbc.properties" />
+    <tx:annotation-driven />
+
+    <!-- enkripsi file database.properties -->
+    <bean id="environmentStringPBEConfig" class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig"
+          p:password="administrator"
+          p:algorithm="PBEWithMD5AndTripleDES"
+    />
+
+    <bean id="standardPBEStringEncryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor"
+          p:config-ref="environmentStringPBEConfig"
+    />
+
+    <!-- context placeholder diganti dengan jasypt untuk dapat membaca enkripsi file -->
+    <bean class="org.jasypt.spring31.properties.EncryptablePropertyPlaceholderConfigurer">
+        <constructor-arg type="org.jasypt.encryption.StringEncryptor" ref="standardPBEStringEncryptor"/>
+        <property name="locations">
+            <list>
+                <value>classpath:jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- BoneCP configuration -->
+    <bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+        <property name="driverClass" value="${jdbc.driver}" />
+        <property name="jdbcUrl" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="idleConnectionTestPeriodInMinutes" value="${jdbc.idleConnectionTestPeriodInMinutes}"/>
+        <property name="idleMaxAgeInMinutes" value="${jdbc.idleMaxAgeInMinutes}"/>
+        <property name="maxConnectionsPerPartition" value="${jdbc.maxConnectionsPerPartition}"/>
+        <property name="minConnectionsPerPartition" value="${jdbc.minConnectionsPerPartition}"/>
+        <property name="poolAvailabilityThreshold" value="${jdbc.poolAvailabilityThreshold}" />
+        <property name="partitionCount" value="${jdbc.partitionCount}"/>
+        <property name="acquireIncrement" value="${jdbc.acquireIncrement}"/>
+        <property name="statementsCacheSize" value="${jdbc.statementsCacheSize}"/>
+        <property name="releaseHelperThreads" value="${jdbc.releaseHelperThreads}"/>
+        <property name="lazyInit" value="${jdbc.lazyInit}" />
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+          p:dataSource-ref="dataSource"
+    />
+
+    <bean class="org.springframework.jdbc.core.JdbcTemplate"
+          p:dataSource-ref="dataSource"
+    />
+    
+</beans>
