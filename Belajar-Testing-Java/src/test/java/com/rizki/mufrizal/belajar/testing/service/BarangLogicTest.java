@@ -12,17 +12,21 @@ import java.text.ParseException;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 public class BarangLogicTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BarangLogicTest.class);
     static Barang barang;
+    static Barang barangNull;
     static BarangLogic barangLogic;
     
     @BeforeClass
     public static void initializeVariabel(){
         barang = new Barang();
         barangLogic = new BarangLogic();
+        barangNull = new Barang();
         
         LOGGER.info("Initialize Variabel {}", barang);
     }
@@ -41,6 +45,9 @@ public class BarangLogicTest {
     
     @Test
     public void testKelengkapanBarang() throws Exception {
+        
+        assertNull(barangLogic.kelengkapanBarang(barangNull)); //cek barang null
+        assertNotNull("Spesifikasi Barang : 1 : Rinso : CAIR : " + new Date() + " : " + 1000, barangLogic.kelengkapanBarang(barang));
         assertEquals("Spesifikasi Barang : 1 : Rinso : CAIR : " + new Date() + " : " + 1000, barangLogic.kelengkapanBarang(barang));
 
         LOGGER.info("Test Kelengkapan Barang {}", "Spesifikasi Barang : 1 : Rinso : CAIR : Wed Dec 12 00:00:00 WIB 2012");
