@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 
@@ -33,22 +33,17 @@ public class BarangLogicTest {
         barang.setIdBarang(1);
         barang.setNamaBarang("Rinso");
         barang.setJenisBarang(JenisBarang.CAIR);
-        barang.setTanggalKadaluarsa(new SimpleDateFormat("dd/MM/yyyy").parse("12/12/2012"));
+        barang.setTanggalKadaluarsa(new Date());
+        barang.setHargaBarang(1000);
 
         LOGGER.info("Set Variabel {}", barang);
     }
     
     @Test
-    public void testKelengkapanBarang() throws ParseException {
-        assertEquals("Spesifikasi Barang : 1 : Rinso : CAIR : Wed Dec 12 00:00:00 WIB 2012", barangLogic.kelengkapanBarang(barang));
+    public void testKelengkapanBarang() throws Exception {
+        assertEquals("Spesifikasi Barang : 1 : Rinso : CAIR : " + new Date() + " : " + 1000, barangLogic.kelengkapanBarang(barang));
 
         LOGGER.info("Test Kelengkapan Barang {}", "Spesifikasi Barang : 1 : Rinso : CAIR : Wed Dec 12 00:00:00 WIB 2012");
     }
 
-    @Test
-    public void testCheckingDateFormat() throws ParseException {
-        assertEquals(new SimpleDateFormat("dd/MM/yyyy").parse("12/12/2012"), barang.getTanggalKadaluarsa());
-
-        LOGGER.info("Test Format Tanggal {}", new SimpleDateFormat("dd/MM/yyyy").parse("12/12/2012"));
-    }
 }
