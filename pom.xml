@@ -17,6 +17,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java>1.8</java>
         <maven-compiler-plugin>3.2</maven-compiler-plugin>
+        <junit>4.12</junit>
+        <slf4j>1.7.10</slf4j>
+        <maven-project-info-reports-plugin>2.8</maven-project-info-reports-plugin>
+        <cobertura-maven-plugin>2.6</cobertura-maven-plugin>
     </properties>
 
 </project>
