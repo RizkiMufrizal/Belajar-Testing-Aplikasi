@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import java.text.ParseException;
 import java.util.Date;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class BarangLogicJumlahTest {
 
@@ -21,7 +21,7 @@ public class BarangLogicJumlahTest {
     Integer jumlahBarang;
 
     @BeforeClass
-    public static void initializeVariabel(){
+    public static void initializeVariabel() {
         barang = new Barang();
         barangLogicJumlah = new BarangLogicJumlah();
 
@@ -41,9 +41,9 @@ public class BarangLogicJumlahTest {
 
         LOGGER.info("Set Variabel {}", barang);
     }
-    
+
     @Test
     public void testTotalBarang() throws Exception {
-        assertEquals(10000 * 15 , barangLogicJumlah.totalBarang(barang, jumlahBarang), 0);
+        assertEquals(10000 * 15, barangLogicJumlah.totalBarang(barang, jumlahBarang), 0);
     }
 }

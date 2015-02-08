@@ -3,8 +3,8 @@ package com.rizki.mufrizal.belajar.testing.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Barang implements Serializable{
-    
+public class Barang implements Serializable {
+
     private Integer idBarang;
     private String namaBarang;
     private JenisBarang jenisBarang;
