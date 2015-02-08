@@ -12,5 +12,11 @@
     <modules>
         <module>Belajar-Testing-Java</module>
     </modules>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java>1.8</java>
+        <maven-compiler-plugin>3.2</maven-compiler-plugin>
+    </properties>
 
 </project>
