@@ -11,6 +11,7 @@
     
     <modules>
         <module>Belajar-Testing-Java</module>
+        <module>Belajar-Testing-DBUnit</module>
     </modules>
     
     <properties>
@@ -19,6 +20,11 @@
         <maven-compiler-plugin>3.2</maven-compiler-plugin>
         <junit>4.12</junit>
         <slf4j>1.7.10</slf4j>
+        <mariadb-java-client>1.1.8</mariadb-java-client>
+        <dbunit>2.5.0</dbunit>
+        <spring.version>4.1.4.RELEASE</spring.version>
+        <jasypt-spring31>1.9.2</jasypt-spring31>
+        <bonecp>0.8.0.RELEASE</bonecp>
         <maven-project-info-reports-plugin>2.8</maven-project-info-reports-plugin>
         <cobertura-maven-plugin>2.6</cobertura-maven-plugin>
     </properties>
