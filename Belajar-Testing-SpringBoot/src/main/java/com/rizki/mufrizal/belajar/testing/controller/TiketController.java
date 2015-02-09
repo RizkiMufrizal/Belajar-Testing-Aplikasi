@@ -4,6 +4,7 @@ import com.rizki.mufrizal.belajar.testing.domain.Tiket;
 import com.rizki.mufrizal.belajar.testing.service.TiketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -17,7 +18,7 @@ public class TiketController {
     @Autowired
     private TiketService tiketService;
     
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/Hello", method = RequestMethod.GET, produces = {MediaType.TEXT_PLAIN_VALUE})
     public String index(){
         return "Hello Word";
     }
