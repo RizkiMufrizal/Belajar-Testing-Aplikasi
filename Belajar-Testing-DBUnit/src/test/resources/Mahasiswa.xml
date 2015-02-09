@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <mahasiswa
+        npm="58412085"
+        nama="rizki mufrizal"
+        kelas="3IA04"
+        jurusan="Teknik Informatika"
+        tanggalLahir="1993-11-15"
+    />
+
+    <mahasiswa
+    	npm="1111111"
+        nama="admin"
+        kelas="3IA04"
+        jurusan="Teknik Informatika"
+        tanggalLahir="1991-11-11"
+   />
+</dataset>
