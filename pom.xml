@@ -29,6 +29,7 @@
         <spring.boot.version>1.2.1.RELEASE</spring.boot.version>
         <jasypt-spring31>1.9.2</jasypt-spring31>
         <bonecp>0.8.0.RELEASE</bonecp>
+        <mockito-all>1.10.19</mockito-all>
         <spring-test-dbunit>1.2.1</spring-test-dbunit>
         <maven-war-plugin>2.6</maven-war-plugin>
         <maven-project-info-reports-plugin>2.8</maven-project-info-reports-plugin>
