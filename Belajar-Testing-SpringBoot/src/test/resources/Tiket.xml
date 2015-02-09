@@ -7,7 +7,7 @@
         tujuan="jakarta"
     />
 
-	<tb_tiket
+    <tb_tiket
     	id_tiket="222"
         harga="2000"
         tanggal_keberangkatan="2013-2-2"
