@@ -7,8 +7,6 @@
 
     <context:annotation-config />
     <context:component-scan base-package="com.rizki.mufrizal.belajar.testing" />
-    
-    <context:property-placeholder location="classpath:jdbc.properties" />
     <tx:annotation-driven />
 
     <!-- enkripsi file database.properties -->
