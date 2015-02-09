@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -37,6 +38,11 @@ public class TiketServiceImpl implements TiketService{
     @Override
     public Tiket getTiket(String idTiket) {
         return tiketRepository.findOne(idTiket);
+    }
+
+    @Override
+    public Tiket getTiketBytanggalKeberangkatan(Date date) {
+        return tiketRepository.findBytanggalKeberangkatan(date);
     }
 
     @Override
