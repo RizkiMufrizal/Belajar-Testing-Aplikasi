@@ -109,8 +109,6 @@ nb-configuration.xml
 
 
 ### Java template
-*.class
-
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -131,4 +129,10 @@ pom.xml.versionsBackup
 pom.xml.next
 release.properties
 
+### yeoman
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
 
