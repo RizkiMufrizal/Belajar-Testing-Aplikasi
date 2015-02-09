@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <tb_tiket
+    	id_tiket="111"
+        harga="1000"
+        tanggal_keberangkatan="2012-1-1"
+        tujuan="jakarta"
+    />
+
+	<tb_tiket
+    	id_tiket="222"
+        harga="2000"
+        tanggal_keberangkatan="2013-2-2"
+        tujuan="depok"
+    />
+
+</dataset>
