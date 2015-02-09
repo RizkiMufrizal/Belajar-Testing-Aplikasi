@@ -12,19 +12,25 @@
     <modules>
         <module>Belajar-Testing-Java</module>
         <module>Belajar-Testing-DBUnit</module>
+        <module>Belajar-Testing-SpringBoot</module>
+        <module>Belajar-Testing-Angular</module>
     </modules>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java>1.8</java>
+        <tomcat>8.0.18</tomcat>
         <maven-compiler-plugin>3.2</maven-compiler-plugin>
         <junit>4.12</junit>
         <slf4j>1.7.10</slf4j>
         <mariadb-java-client>1.1.8</mariadb-java-client>
         <dbunit>2.5.0</dbunit>
         <spring.version>4.1.4.RELEASE</spring.version>
+        <spring.boot.version>1.2.1.RELEASE</spring.boot.version>
         <jasypt-spring31>1.9.2</jasypt-spring31>
         <bonecp>0.8.0.RELEASE</bonecp>
+        <spring-test-dbunit>1.2.1</spring-test-dbunit>
+        <maven-war-plugin>2.6</maven-war-plugin>
         <maven-project-info-reports-plugin>2.8</maven-project-info-reports-plugin>
         <cobertura-maven-plugin>2.6</cobertura-maven-plugin>
     </properties>
