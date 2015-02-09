@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static org.junit.Assert.*;
 
@@ -39,38 +39,101 @@ public class TiketServiceImplTest {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TiketServiceImplTest.class);
     
-    static Tiket tiket;
+    static Tiket tiketSave;
+    static Tiket tiketUpdate;
+    static Tiket tiketDelete;
     
     @BeforeClass
     public static void setUpVariabel() throws Exception{
-        tiket = new Tiket();
+        tiketSave = new Tiket();
+        tiketUpdate = new Tiket();
+        tiketDelete = new Tiket();
 
         LOGGER.info("setUp Variabel");
     }
     
     @Before
     public void setUp() throws Exception {
-        tiket.setIdTiket("1");
-        tiket.setTujuan("jakarta");
-        tiket.setHarga(10000);
-        tiket.setTanggalKeberangkatan(new SimpleDateFormat("dd/MM/yyyy").parse("1/1/1991"));
+        tiketSave.setTujuan("jakarta");
+        tiketSave.setHarga(10000);
+        tiketSave.setTanggalKeberangkatan(new Date());
 
+        tiketUpdate.setTujuan("depok");
+        tiketUpdate.setHarga(25000);
+        tiketUpdate.setTanggalKeberangkatan(new Date());
+
+        tiketDelete.setTujuan("depok");
+        
         LOGGER.info("set Varibel");
     }
 
     @Test
+    @DatabaseSetup("classpath:Tiket.xml")
     public void testSave() throws Exception {
+        tiketService.save(tiketSave);
+        
+        assertTrue(tiketService.getTiketList().size() > 2);
+        assertTrue(tiketService.getTiketList().size() == 3);
+        
+        assertEquals("jakarta", tiketService.getTiketBytanggalKeberangkatan(new Date()).getTujuan());
+        Tiket tiket = tiketService.getTiketBytanggalKeberangkatan(new Date());
+        
+        assertEquals("jakarta", tiketService.getTiket(tiket.getIdTiket()).getTujuan());
 
+        LOGGER.info("save data");
     }
 
     @Test
+    @DatabaseSetup("classpath:Tiket.xml")
     public void testUpdate() throws Exception {
+        tiketService.save(tiketSave);
 
+        assertTrue(tiketService.getTiketList().size() > 2);
+        assertTrue(tiketService.getTiketList().size() == 3);
+
+        assertEquals("jakarta", tiketService.getTiketBytanggalKeberangkatan(new Date()).getTujuan());
+        Tiket tiket = tiketService.getTiketBytanggalKeberangkatan(new Date());
+
+        assertEquals("jakarta", tiketService.getTiket(tiket.getIdTiket()).getTujuan());
+        
+        tiketUpdate.setIdTiket(tiket.getIdTiket());
+        
+        tiketService.update(tiketUpdate);
+
+        assertTrue(tiketService.getTiketList().size() > 2);
+        assertTrue(tiketService.getTiketList().size() == 3);
+
+        assertEquals("depok", tiketService.getTiketBytanggalKeberangkatan(new Date()).getTujuan());
+        tiket = tiketService.getTiketBytanggalKeberangkatan(new Date());
+
+        assertEquals("depok", tiketService.getTiket(tiket.getIdTiket()).getTujuan());
+
+        LOGGER.info("update data");
     }
 
     @Test
+    @DatabaseSetup("classpath:Tiket.xml")
     public void testDelete() throws Exception {
+        tiketService.save(tiketSave);
 
+        assertTrue(tiketService.getTiketList().size() > 2);
+        assertTrue(tiketService.getTiketList().size() == 3);
+
+        assertEquals("jakarta", tiketService.getTiketBytanggalKeberangkatan(new Date()).getTujuan());
+        Tiket tiket = tiketService.getTiketBytanggalKeberangkatan(new Date());
+
+        assertEquals("jakarta", tiketService.getTiket(tiket.getIdTiket()).getTujuan());
+
+        tiketDelete.setIdTiket(tiket.getIdTiket());
+        
+        tiketService.delete(tiketDelete);
+
+        assertTrue(tiketService.getTiketList().size() > 1);
+        assertTrue(tiketService.getTiketList().size() == 2);
+        
+        assertNull(tiketService.getTiket(tiket.getIdTiket()));
+
+        LOGGER.info("delete data");
     }
 
     @Test
