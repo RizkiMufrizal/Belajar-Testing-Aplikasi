@@ -7,7 +7,7 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         BarangLogicTest.class,
         BarangLogicJumlahTest.class
-}
+    }
 )
 public class BarangTesting {
 }
