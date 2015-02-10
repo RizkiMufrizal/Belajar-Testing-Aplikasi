@@ -47,9 +47,8 @@ Web Server
 #Melakukan Testing
 untuk melakukan testing jalankan sintak berikut pada root project maven :
 
-    ```sh
     mvn clean package
-    ```
+    
 Selanjutnya untuk membuat Coverage Testing maka jalankan sintak berikut :
 
    ```sh
