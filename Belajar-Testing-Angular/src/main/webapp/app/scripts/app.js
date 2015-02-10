@@ -1,35 +1,33 @@
-'use strict';
-
 /**
  * @ngdoc overview
  * @name webappApp
  * @description
- * # webappApp
+ * # BelajarTestingAngular
  *
  * Main module of the application.
  */
-angular
-  .module('webappApp', [
-    'ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+
+(function(){
+  'use strict';
+  angular
+    .module('belajarTestingAngularApp', [
+      'ngAnimate',
+      'ngAria',
+      'ngCookies',
+      'ngMessages',
+      'ngResource',
+      'ngRoute',
+      'ngSanitize',
+      'ngTouch',
+      'ui.router'
+    ])
+    .config(function($stateProvider, $urlRouterProvider) {
+      $urlRouterProvider.otherwise('/Home');
+
+      $stateProvider
+        .state('Home', {
+          url: '/Home',
+          templateUrl: 'views/home.html'
+        });
+    });
+})();
