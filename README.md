@@ -48,7 +48,10 @@ Web Server
 untuk melakukan testing jalankan sintak berikut pada root project maven :
 `mvn clean package`
 Selanjutnya untuk membuat Coverage Testing maka jalankan sintak berikut :
-`mvn clean cobertura:cobertura`
+
+   ```sh
+   mvn clean cobertura:cobertura
+   ```
 lalu buka file index.html yang terdapat di folder target/site/cobertura di masing - masing
 folder aplikasi
     
