@@ -51,9 +51,8 @@ untuk melakukan testing jalankan sintak berikut pada root project maven :
     
 Selanjutnya untuk membuat Coverage Testing maka jalankan sintak berikut :
 
-   ```sh
-   mvn clean cobertura:cobertura
-   ```
+    mvn clean cobertura:cobertura
+   
 lalu buka file index.html yang terdapat di folder target/site/cobertura di masing - masing
 folder aplikasi
     
