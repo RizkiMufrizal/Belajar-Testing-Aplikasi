@@ -3,14 +3,35 @@
 Aplikasi ini dibuat bertujuan untuk memperdalam testing sebuah aplikasi
 
 Teknologi yang digunakan :
-* Spring
-* MariaDB (database)
+
+Java Testing :
+* Spring Boot
+* Spring Data JPA
+* Spring MVC
+* Jackson
+* MariaDB
 * jasypt (enksripsi file jdbc.properties)
 * bonecp (pooling database)
 * slf4j (log)
 * JUnit (Unit Testing)
 * DBUnit (Integration Testing)
 * cobertura (Coverage Testing)
+
+Angular Testing :
+* Yeoman
+* Bower
+* NPM
+* Angular
+* JQuery
+* Bootstrap
+* Grunt
+* Karma
+* PhantomJS
+* UI Router
+
+Web Server
+* Tomcat 8.0.18
+* Jetty 9.2.7.v20150116
 
 jika terjadi error seperti ini :
 `org.jasypt.exceptions.EncryptionOperationNotPossibleException:
