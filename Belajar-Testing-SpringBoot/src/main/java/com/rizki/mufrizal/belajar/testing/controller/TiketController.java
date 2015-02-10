@@ -12,27 +12,32 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = TiketController.API)
 public class TiketController {
+    
+    public static final String API = "/api";
+    public static final String HELLO = "/Hello";
+    public static final String TIKET = "/tiket";
+    public static final String DELETE_TIKET = "/tiket/{idTiket}";
     
     @Autowired
     private TiketService tiketService;
     
-    @RequestMapping(value = "/Hello", method = RequestMethod.GET, produces = {MediaType.TEXT_PLAIN_VALUE})
+    @RequestMapping(value = HELLO, method = RequestMethod.GET, produces = {MediaType.TEXT_PLAIN_VALUE})
     public String index(){
         return "Hello Word";
     }
     
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
-    @RequestMapping(value = "/tiket", method = RequestMethod.GET)
+    @RequestMapping(value = TIKET, method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<Tiket> getTiketList(){
         return tiketService.getTiketList();
     }
 
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
-    @RequestMapping(value = "/tiket", method = RequestMethod.POST)
+    @RequestMapping(value = TIKET, method = RequestMethod.POST, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public Map<String, Object> saveTiket(@RequestBody Tiket tiket){
         tiketService.save(tiket);
 
@@ -45,7 +50,7 @@ public class TiketController {
 
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
-    @RequestMapping(value = "/tiket", method = RequestMethod.PUT)
+    @RequestMapping(value = TIKET, method = RequestMethod.PUT, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public Map<String, Object> updateTiket(@RequestBody Tiket tiket){
         tiketService.update(tiket);
 
@@ -58,7 +63,7 @@ public class TiketController {
 
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
-    @RequestMapping(value = "/tiket/{idTiket}", method = RequestMethod.DELETE)
+    @RequestMapping(value = DELETE_TIKET, method = RequestMethod.DELETE, consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public Map<String, Object> deleteTiket(@PathVariable("idTiket") String idTiket){
         Tiket tiket = tiketService.getTiket(idTiket);
         tiketService.delete(tiket);
