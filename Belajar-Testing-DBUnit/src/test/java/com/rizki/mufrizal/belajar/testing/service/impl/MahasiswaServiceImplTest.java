@@ -28,6 +28,7 @@ import static org.junit.Assert.*;
         DbUnitTestExecutionListener.class
     }
 )
+@DatabaseSetup("classpath:Mahasiswa.xml")
 public class MahasiswaServiceImplTest {
 
     @Autowired
@@ -69,7 +70,6 @@ public class MahasiswaServiceImplTest {
     }
 
     @Test
-    @DatabaseSetup("classpath:Mahasiswa.xml")
     public void testSave() throws Exception {
         mahasiswaService.save(mahasiswaSave);
 
@@ -80,7 +80,6 @@ public class MahasiswaServiceImplTest {
     }
 
     @Test
-    @DatabaseSetup("classpath:Mahasiswa.xml")
     public void testUpdate() throws Exception {
         mahasiswaService.save(mahasiswaSave);
         
@@ -93,7 +92,6 @@ public class MahasiswaServiceImplTest {
     }
 
     @Test
-    @DatabaseSetup("classpath:Mahasiswa.xml")
     public void testDelete() throws Exception {
         mahasiswaService.save(mahasiswaSave);
 
@@ -111,7 +109,6 @@ public class MahasiswaServiceImplTest {
     }
     
     @Test
-    @DatabaseSetup("classpath:Mahasiswa.xml")
     public void testGetMahasiswa() throws Exception {
         Mahasiswa mahasiswa = mahasiswaService.getMahasiswa("58412085");
 
@@ -122,7 +119,6 @@ public class MahasiswaServiceImplTest {
     }
 
     @Test
-    @DatabaseSetup("classpath:Mahasiswa.xml")
     public void testGetMahasiswaList() throws Exception {
         List<Mahasiswa> mahasiswaList = mahasiswaService.getMahasiswaList();
         
