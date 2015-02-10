@@ -26,6 +26,7 @@
         <slf4j>1.7.10</slf4j>
         <mariadb-java-client>1.1.8</mariadb-java-client>
         <dbunit>2.5.0</dbunit>
+        <json-path-assert>1.2.0</json-path-assert>
         <spring.version>4.1.4.RELEASE</spring.version>
         <spring.boot.version>1.2.1.RELEASE</spring.boot.version>
         <jasypt-spring31>1.9.2</jasypt-spring31>
