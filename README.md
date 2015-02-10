@@ -34,6 +34,7 @@ Web Server
 * Jetty 9.2.7.v20150116
 
 #Membuat Enkripsi File jdbc.properties
+* Enkripsi ini terdapat di dalam project Belajar-Testing-DBUnit
 * buka file jdbc.properties yang ada di dalam folder resources
 * setiap yang di enkripsi ganti dengan enkripsi yang telah anda buat
 * untuk melakukan enkripsi maka jalankan main class yang ada di project Belajar Testing DBUnit
