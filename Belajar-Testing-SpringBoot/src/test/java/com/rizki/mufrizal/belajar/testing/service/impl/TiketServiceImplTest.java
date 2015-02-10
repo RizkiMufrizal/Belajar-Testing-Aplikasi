@@ -32,6 +32,7 @@ import static org.junit.Assert.*;
         DbUnitTestExecutionListener.class
     }
 )
+@DatabaseSetup("classpath:Tiket.xml")
 public class TiketServiceImplTest {
 
     @Autowired
@@ -68,7 +69,6 @@ public class TiketServiceImplTest {
     }
 
     @Test
-    @DatabaseSetup("classpath:Tiket.xml")
     public void testSave() throws Exception {
         tiketService.save(tiketSave);
         
@@ -84,7 +84,6 @@ public class TiketServiceImplTest {
     }
 
     @Test
-    @DatabaseSetup("classpath:Tiket.xml")
     public void testUpdate() throws Exception {
         tiketService.save(tiketSave);
 
@@ -112,7 +111,6 @@ public class TiketServiceImplTest {
     }
 
     @Test
-    @DatabaseSetup("classpath:Tiket.xml")
     public void testDelete() throws Exception {
         tiketService.save(tiketSave);
 
@@ -137,7 +135,6 @@ public class TiketServiceImplTest {
     }
 
     @Test
-    @DatabaseSetup("classpath:Tiket.xml")
     public void testGetTiket() throws Exception {
         
         assertNotNull(tiketService.getTiket("222"));
@@ -147,7 +144,6 @@ public class TiketServiceImplTest {
     }
 
     @Test
-    @DatabaseSetup("classpath:Tiket.xml")
     public void testGetTiketList() throws Exception {
         
         assertTrue(tiketService.getTiketList().size() > 1);
