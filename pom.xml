@@ -20,6 +20,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java>1.8</java>
         <tomcat>8.0.18</tomcat>
+        <jetty>9.2.7.v20150116</jetty>
         <maven-compiler-plugin>3.2</maven-compiler-plugin>
         <junit>4.12</junit>
         <slf4j>1.7.10</slf4j>
