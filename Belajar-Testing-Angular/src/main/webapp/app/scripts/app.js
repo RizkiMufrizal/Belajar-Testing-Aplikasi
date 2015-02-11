@@ -7,7 +7,7 @@
  * Main module of the application.
  */
 
-(function(){
+(function() {
   'use strict';
   angular
     .module('belajarTestingAngularApp', [
@@ -19,15 +19,18 @@
       'ngRoute',
       'ngSanitize',
       'ngTouch',
-      'ui.router'
-    ])
+      'ui.router',
+      'ngBootbox'
+      ])
     .config(function($stateProvider, $urlRouterProvider) {
       $urlRouterProvider.otherwise('/Home');
 
       $stateProvider
         .state('Home', {
           url: '/Home',
-          templateUrl: 'views/home.html'
+          templateUrl: 'views/home.html',
+          controller: 'BarangController',
+          controllerAs: 'barang'
         });
     });
 })();
