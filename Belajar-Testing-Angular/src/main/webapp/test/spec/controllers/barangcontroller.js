@@ -13,7 +13,6 @@ describe('Controller: BarangController', function() {
   }));
 
   it('should attach a list of awesomeThings to the scope', function() {
-    expect(BarangController.namaBarang).toBe('rinso'); //test kesamaan, harusnya sama
-    expect(BarangController.namaBarang.length).toBe(5); // harusnya panjangnya 5
+    expect(BarangController.enable).toBe(true);
   });
 });

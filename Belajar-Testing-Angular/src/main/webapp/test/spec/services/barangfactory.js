@@ -1,17 +1,18 @@
 'use strict';
 
-describe('Service: BarangFactory', function () {
+describe('Service: BarangFactory', function() {
 
-  // load the service's module
+  // Load Module
   beforeEach(module('belajarTestingAngularApp'));
 
   // instantiate service
   var BarangFactory;
-  beforeEach(inject(function (_BarangFactory_) {
+
+  beforeEach(inject(function(_BarangFactory_) {
     BarangFactory = _BarangFactory_;
   }));
 
-  it('should do something', function () {
+  it('should do something', function() {
     expect(!!BarangFactory).toBe(true);
   });
 

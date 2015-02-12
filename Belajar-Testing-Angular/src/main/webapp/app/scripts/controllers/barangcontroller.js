@@ -20,8 +20,6 @@
     barang.enable = true;
     barang.dataBarang = {};
 
-    barang.namaBarang = 'rinso';
-
     barang.getRefreshBarang = function() {
       BarangFactory.getAllBarang().query({}, function(data) {
         barang.dataBarang = data;
